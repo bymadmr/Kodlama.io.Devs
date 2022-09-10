@@ -31,8 +31,8 @@ namespace ProgLang.Application.Features.Languages.Queries.GetByIdLanguage
                 Language? language = await _languageRepository.GetAsync(x => x.Id == request.Id);
                 _languageBusinessRules.LanguageShouldExistWhenRequested(language);
 
-                LanguageGetByIdDto result = _mapper.Map<LanguageGetByIdDto>(language);
-                return result;
+                LanguageGetByIdDto mappedLanguageGetByIdDto = _mapper.Map<LanguageGetByIdDto>(language);
+                return mappedLanguageGetByIdDto;
             }
         }
     }

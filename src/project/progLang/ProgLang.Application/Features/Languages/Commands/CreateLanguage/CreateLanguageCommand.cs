@@ -32,8 +32,8 @@ namespace ProgLang.Application.Features.Languages.Commands.CreateLanguage
 
                 Language mappedLanguage = _mapper.Map<Language>(request);
                 Language createdLanguage =await _languageRepository.AddAsync(mappedLanguage);
-                CreatedLanguageDto createdLanguageDto = _mapper.Map<CreatedLanguageDto>(createdLanguage);
-                return createdLanguageDto;
+                CreatedLanguageDto mappedcreatedLanguageDto = _mapper.Map<CreatedLanguageDto>(createdLanguage);
+                return mappedcreatedLanguageDto;
             }
         }
     }

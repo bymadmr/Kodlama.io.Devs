@@ -19,12 +19,12 @@ namespace ProgLang.Application.Features.Languages.Rules
         }
         public async Task LanguageNameCanNotBeDublicatedWhenInserted(string languageName)
         {
-            IPaginate<Language> result = await _languageRepository.GetListAsync(b=>b.Name==languageName);
+            IPaginate<Language> result = await _languageRepository.GetListAsync(l=>l.Name==languageName);
             if (result.Items.Any()) throw new BusinessException("Language name exists");
         }
         public void LanguageShouldExistWhenRequested(Language language)
         {
-            if (language == null) throw new BusinessException("Requested language does not exist");
+            if (language == null) throw new BusinessException("Requested language does not exists");
         }
     }
 }

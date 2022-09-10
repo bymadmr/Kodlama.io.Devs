@@ -18,6 +18,7 @@ namespace ProgLang.Persistence
         {
             services.AddDbContext<BaseDbContext>(option => option.UseSqlServer(configuration.GetConnectionString("ProgLangConnectionString")));
             services.AddScoped<ILanguageRepository, LanguageRepository>();
+            services.AddScoped<ITechnologyRepository, TechnologyRepository>();
             
             return services;
         }

@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace ProgLang.Domain.Entities
 {
-    public class Language:Entity
+    public class Social:Entity
     {
         public string Name { get; set; }
-        public virtual ICollection<Technology> Technologies { get; set; }
-        public Language()
+        public Social()
         {
         }
-        public Language(int id,string name):this()
+        public Social(int id,string name)
         {
-            Id = id;
-            Name = name;
+            Id=id;
+            Name=name;
         }
     }
 }

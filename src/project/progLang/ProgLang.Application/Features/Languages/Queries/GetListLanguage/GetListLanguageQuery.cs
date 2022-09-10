@@ -18,8 +18,8 @@ namespace ProgLang.Application.Features.Languages.Queries.GetListLanguage
         public PageRequest PageRequest { get; set; }
         public class GetListLanguageQueryHandler : IRequestHandler<GetListLanguageQuery, LanguageListModel>
         {
-            ILanguageRepository _languageRepository;
-            IMapper _mapper;
+            private readonly ILanguageRepository _languageRepository;
+            private readonly IMapper _mapper;
             public GetListLanguageQueryHandler(IMapper mapper, ILanguageRepository languageRepository)
             {
                 _mapper = mapper;
