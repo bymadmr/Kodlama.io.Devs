@@ -19,4 +19,10 @@
     <ProjectReference Include="..\ProgLang.Domain\ProgLang.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Auth\Login\Commands\" />
+    <Folder Include="Features\Auth\Register\Commands\" />
+    <Folder Include="Features\Socials\Models\" />
+  </ItemGroup>
+
 </Project>

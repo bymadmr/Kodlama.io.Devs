@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core.Security.JWT;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProgLang.Application.Services.Repositories;
@@ -19,7 +20,13 @@ namespace ProgLang.Persistence
             services.AddDbContext<BaseDbContext>(option => option.UseSqlServer(configuration.GetConnectionString("ProgLangConnectionString")));
             services.AddScoped<ILanguageRepository, LanguageRepository>();
             services.AddScoped<ITechnologyRepository, TechnologyRepository>();
-            
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
+            services.AddScoped<ITokenHelper, JwtHelper>();
+            services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
+            services.AddScoped<ISocialRepository, SocialRepository>();
+            services.AddScoped<ITokenHelper, JwtHelper>();
+            services.AddScoped<IUserSocialRepository, UserSocialRepository>();
             return services;
         }
     }

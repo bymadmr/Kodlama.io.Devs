@@ -13,20 +13,20 @@ namespace ProgLang.WebAPI.Controllers
     [ApiController]
     public class LanguagesController : BaseController
     {
-        [HttpPost]
+        [HttpPost("Add")]
         public async Task<IActionResult> Add([FromBody] CreateLanguageCommand createLanguageCommand)
         {
             CreatedLanguageDto result = await Mediator.Send(createLanguageCommand);
             return Created("", result);
         }
-        [HttpGet]
+        [HttpGet("GetList")]
         public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
         {
             GetListLanguageQuery getListLanguageQuery = new() { PageRequest = pageRequest };
             LanguageListModel result = await Mediator.Send(getListLanguageQuery);
             return Ok(result);
         }
-        [HttpGet("{Id}")]
+        [HttpGet("GetById/{Id}")]
         public async Task<IActionResult> GetById([FromRoute] GetByIdLanguageQuery getByIdLanguageQuery)
         {
             LanguageGetByIdDto result = await Mediator.Send(getByIdLanguageQuery);

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgLang.Domain.Entities
+namespace Core.Security.Entities
 {
     public class Social:Entity
     {
@@ -13,9 +13,8 @@ namespace ProgLang.Domain.Entities
         public Social()
         {
         }
-        public Social(int id,string name)
+        public Social(int id,string name):base(id)
         {
-            Id=id;
             Name=name;
         }
     }
